@@ -471,7 +471,7 @@ function remove_pag_rapido($con,$id_persone,$mese){
 function atleti_mese_scaduto($con){
 	$anno = date("Y");
 	$mese = date("m");
-	$query = "SELECT * FROM persone";
+	$query = "SELECT * FROM persone ORDER BY cognome ASC";
 	$result = mysqli_query($con, $query) or die('Errore... mese_scaduto');
 	while ($results = mysqli_fetch_array($result)) { 
 		$nome = $results['nome'];
@@ -482,12 +482,12 @@ function atleti_mese_scaduto($con){
 		$result1 = mysqli_query($con, $query1) or die('Errore... pagamenti mese scaduto');
 		$numrows = mysqli_num_rows($result1);
 		if ($numrows == 0){
-			$riga .= "<a href=\"index.php?sez=atleti&mod=pagamenti&id=$id\">$cognome $nome</a>, ";
+			$riga .= "<option value=\"$id\">$cognome $nome</option>";
 		}
 			
 	}
 	if ($riga == "") {
-		$riga = "<b>Tutti i pagamenti sono OK</b> <i style=\"color: green;\" class=\"glyphicon glyphicon-ok\"></i>";
+		$riga = "<option>Tutti i pagamenti sono OK</option> <i style=\"color: green;\" class=\"glyphicon glyphicon-ok\"></i>";
 	}
 	return $riga;
 }

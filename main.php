@@ -22,7 +22,12 @@ include_once('function.php');
 			</td>
 		</tr>
 		<tr><td><b>AVVISI RAPIDI</b><br />
-		Atleti che non hanno pagato la mensilit&agrave;: <?php echo atleti_mese_scaduto($con); ?><br />
+		Atleti che non hanno pagato la mensilit&agrave;: 
+		<form action="request.php?action=mese_scaduto" method="POST">
+			<select name="mese_scaduto"><?php echo atleti_mese_scaduto($con); ?></select>
+			<input type="submit" value="Seleziona atleta" />
+		</form>
+		<br />
 		Atleti con visita medica in scadenza: <br />
 		</td></tr></table>
 	</div>
