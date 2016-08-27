@@ -67,8 +67,8 @@ include_once('function.php');
 		(*): campi obbligatori.
 		<table class="table" width="100%"><tr>
 			<form action="request.php?action=new_atleta" method="POST">
-			<td><input type="text" class="form-control" name="nome" required placeholder="Nome *" /></td>
-			<td width="50%"><input type="text" class="form-control" name="cognome" required placeholder="Cognome *" /></td></tr><tr>
+			<td><input type="text" class="form-control" style="text-transform: uppercase;" name="nome" required placeholder="Nome *" /></td>
+			<td width="50%"><input type="text" style="text-transform: uppercase;" class="form-control" name="cognome" required placeholder="Cognome *" /></td></tr><tr>
 			<td>Data di Nascita:
   			  	<table><tr><td>
 				<select name="giorno" class="form-control" style="width: 65px;">
