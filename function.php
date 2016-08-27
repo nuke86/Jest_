@@ -522,5 +522,43 @@ function last_visita($con, $id_persone){
 	return $riga;
 }
 
+function select_gare(){
+	$gare = '
+	<select class="form-control" name="tipo">
+				<option value="1" selected>Gran Prix Regionale</option>
+				<option value="2">Torneo FOX Quartu</option>
+				<option value="3">Coppa dell\'amicizia</option>
+				<option value="4">Qualif. Camp. ITA</option>
+				<option value="5">Torneo Piccoli Samurai</option>
+				<option value="6">Campionato Italiano</option>
+				<option value="7">Trofeo Catalano</option>
+				<option value="8">Trofeo Judo Yano</option>
+				<option value="9">Torneo FOX Quartu</option>
+				<option value="10">Torneo Jigoro Kano</option>
+				<option value="11">Trofeo Paperino</option>
+				<option value="12">Trofeo Salvo d\'Aquisto</option>
+				<option value="13">Torneo J.C. Macomer</option>
+				<option value="14">Trofeo Sardigna Trophy</option>
+				<option value="15">Qualif. Camp. ITA Assoluti </option>
+				<option value="16">Trofeo La Maddalena</option>
+				<option value="17">Trofeo Garibaldino</option>
+				<option value="18">Torneo a squadre Shardana</option>
+				<option value="19">Camp. Progetto Farfalla</option>
+				<option value="20">Cagliari CUP</option>
+				<option value="21">Torneo Citt&agrave; di Quartu</option>
+				<option value="22">Qualif. Coppa Italia</option>
+				<option value="23">Torneo C.S. Olbia</option>
+				<option value="24">Torneo Memorial Giovannino Volpi</option>
+				<option value="25">Gran premio Cinture nere</option>
+				<option value="26">Torneo Guido Sieni Judo CUP</option>
+				<option value="27">Torneo J.K. Isili</option>
+				<option value="28">Trofeo Topolino</option>
+				<option value="29">Trofeo Judo in action</option>
+				<option value="30">Campionati Regionali Assoluti</option>
+				<option value="31">Baby Ippon</option>
+				</select>
+	';
+	return $gare;
+}
 
 ?>

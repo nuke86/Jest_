@@ -136,9 +136,9 @@ include_once('function.php');
 		<table class="table" width="100%"><tr>
 			<form action="request.php?action=edit_atleta&id=<?php echo $atleta['id']; ?>" method="POST" enctype="multipart/form-data">
 			<td>Nome:<br />
-			<input type="text" class="form-control" name="nome" required value="<?php echo $atleta['nome']; ?>" /></td>
+			<input type="text" class="form-control" name="nome" text-transform: uppercase;" required value="<?php echo $atleta['nome']; ?>" /></td>
 			<td width="50%">Cognome:<br />
-			<input type="text" class="form-control" name="cognome" required value="<?php echo $atleta['cognome']; ?>" /></td></tr><tr>
+			<input type="text" class="form-control" name="cognome" text-transform: uppercase;" required value="<?php echo $atleta['cognome']; ?>" /></td></tr><tr>
 			<td>Data di Nascita:<br />
 			<input type="text" style="width: 20%;" name="data_nascita" required value="<?php echo $atleta['data_nascita']; ?>" />
 			Codice Fiscale: 
@@ -293,6 +293,38 @@ include_once('function.php');
 				</select>
 			</td>
 			<td>Descrizione: <input type="text" class="form-control" name="descrizione" placeholder="Note aggiuntive:" /></td>
+			</tr><tr><td><input type="submit" class="btn btn-default" value="Conferma inserimento" /></td></tr>
+			</form>
+	</table>
+	
+	</div>
+</div><br /><br />
+
+<?php } elseif (($_GET['sez']=="atleti")AND($_GET['mod']=="new_qualificazione")) { 
+	$atleta = select_detail($con,$_GET['id'],'persone');
+	?>
+	<div class="panel panel-primary">
+	<!-- Default panel contents -->
+	<div class="panel-heading" style="text-align: center;"><b>Inserimento nuova qualificazione di gara</b></div>
+	<div class="panel-body">
+	<a class="btn btn-default" href="index.php?sez=atleti&mod=edit_atleta&id=<?php echo $_GET['id']; ?>"><i class="glyphicon glyphicon-hand-left"></i> Torna a modifica atleta</a>
+	<a class="btn btn-default" href="index.php?sez=atleti"><i class="glyphicon glyphicon-list"></i> Elenco atleti</a>
+	<br /><br />
+	
+	Stai registrando una nuova qualificazione di Gara per <b style="text-transform: uppercase;"><?php echo $atleta['cognome']. ' '.$atleta['nome']; ?></b>
+	<br />
+	<table class="table" width="100%"><tr>
+			<form action="request.php?action=new_qualificazione" method="POST">
+			<input type="hidden" name="id_persone" value="<?php echo $_GET['id']; ?>" />
+			<td>Data della Gara: <input type="text" class="form-control" name="data" value="<?php echo date("Y-m-d"); ?>" id="datepicker" /></td>
+			<td>Tipo di Gara: <?php echo select_gare(); ?>
+			</td>
+			<td>Risultato ottenuto: <select class="form-control" name="risultato">
+				<option value="1" selected>Primo posto</option>
+				<option value="2">Secondo posto</option>
+				<option value="3">Terzo posto</option>
+				<option value="5">Quinto posto</option>
+				</select></td>
 			</tr><tr><td><input type="submit" class="btn btn-default" value="Conferma inserimento" /></td></tr>
 			</form>
 	</table>
