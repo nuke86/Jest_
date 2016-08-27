@@ -1,5 +1,5 @@
 # Jest_
-Jest_ is a Judo fitnees school management system, written in PHP.
+Jest_ is a Judo fitness school management system, written in PHP.
 
 ## Why Jest_?
 Jest_ helps judo gyms, yet only Italian, better manage their data: the company and the athletes. 
