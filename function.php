@@ -511,9 +511,8 @@ function atleti_mese_scaduto($con){
 }
 
 function atleti_visita_scaduta($con){
-	$anno = date("Y");
-	$mese = date("m");
-	$mese_prox = date("m", strtotime("+1 month", strtotime($mese)));
+	$oggi = date("m-Y");
+	$mese_prox = date("m-Y", strtotime("+1 month", strtotime($oggi)));
 	$query = "SELECT * FROM persone ORDER BY cognome ASC";
 	$result = mysqli_query($con, $query) or die('Errore... mese_scaduto');
 	while ($results = mysqli_fetch_array($result)) { 
@@ -521,13 +520,15 @@ function atleti_visita_scaduta($con){
 		$cognome = $results['cognome'];
 		$id = $results['id'];
 		
-		$query1 = "SELECT * FROM visite WHERE data LIKE '$anno-$mese%' OR data LIKE '$anno-$mese_prox%' AND id_persone = $id";
+		$query1 = "SELECT * FROM visite WHERE id_persone = $id";
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
-		$numrows = mysqli_num_rows($result1);
-		if ($numrows != 0){
-			$riga .= "<option value=\"$id\">$cognome $nome</option>";
-		}
-			
+		while ($results = mysqli_fetch_array($result)) { 
+			$data = $results['data'];
+			$scadenza = date("m-Y", strtotime("+1 year", strtotime($data)));
+			if (($scadenza == $oggi) OR ($scadenza == $mese_prox) OR ($scadenza < $oggi)){
+				$riga .= "<option value=\"$id\">$cognome $nome</option>";
+			}
+		}	
 	}
 	if ($riga == "") {
 		$riga = "<option>Tutte le visite sono OK</option> <i style=\"color: green;\" class=\"glyphicon glyphicon-ok\"></i>";
