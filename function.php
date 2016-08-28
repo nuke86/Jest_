@@ -556,4 +556,19 @@ function array_gare(){
 	return $lista_gare;
 }
 
+function select_gare($id){
+	$array_gare = array_gare();
+	$dim = count($array_gare);
+	
+	for ($i=0; $i < $dim; $i++) {
+		$riga .= "<option value=\"$i\">$array_gare[$i]</option>";
+		
+		if (($id != "all") AND ($id == $i)){
+			$riga .= "<option value=\"$i\" selected>$array_gare[$i]</option>";
+		}
+		
+	}
+	return $riga;
+}
+
 ?>
