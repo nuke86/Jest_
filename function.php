@@ -543,7 +543,7 @@ function atleti_visita_scaduta($con){
 			$data = $results['data'];
 		}	
 		$differenza = delta_tempo($data, $oggi, "g");
-		echo "$scadenza <br /> $oggi <br /> $differenza <br />";
+		echo "$data <br /> $oggi <br /> $differenza <br />";
 		if (differenza > 0){
 			$riga .= "<option value=\"$id\">$cognome $nome</option>";
 		}
