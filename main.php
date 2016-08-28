@@ -169,11 +169,14 @@ include_once('function.php');
 			<input type="file" id="file" name="docs[]" multiple="multiple" /><br /><br />
 			</td></tr>
 			<tr><td><b>VISITE MEDICHE:</b><br />
-			<table><tr><td>Data scadenza || </td><td>Tipo</td></tr>
-			<?php echo select_visite_persona($con, $atleta['id']); ?></table>
+				<table>
+					<tr><td>Data scadenza || </td><td>Tipo</td></tr>
+					<?php echo select_visite_persona($con, $atleta['id']); ?>
+				</table>
 			</td><td><b>QUALIFICAZIONI:</b><br />
-				<table><tr><td>Gara: || </td><td>Data: || </td><td>Risultato:</td></tr>
-				<?php echo riga_gare(); ?>
+				<table>
+					<tr><td>Gara: || </td><td>Data: || </td><td>Risultato:</td></tr>
+					<?php echo riga_gare_db(); ?>
 				</table>
 			</td>
 			
