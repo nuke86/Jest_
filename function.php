@@ -544,8 +544,8 @@ function atleti_visita_scaduta($con){
 			$scadenza = date("Y-m-d", strtotime("+1 year", strtotime($data)));
 		}	
 		$differenza = delta_tempo($scadenza, $oggi, "g");
-		echo "$scadenza <br /> $oggi <br /> $differenza <br />";
-		if (differenza > 0){
+		//echo "$scadenza <br /> $oggi <br /> $differenza <br />";
+		if ($differenza > 0){
 			$riga .= "<option value=\"$id\">$cognome $nome</option>";
 		}
 	}
