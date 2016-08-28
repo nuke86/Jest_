@@ -541,9 +541,8 @@ function atleti_visita_scaduta($con){
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
 		while ($results = mysqli_fetch_array($result)) { 
 			$data = $results['data'];
-			$scadenza = date("Y-m-d", strtotime("+1 year", strtotime($data)));
 		}	
-		$differenza = delta_tempo($scadenza, $oggi, "g");
+		$differenza = delta_tempo($data, $oggi, "g");
 		echo "$scadenza <br /> $oggi <br /> $differenza <br />";
 		if (differenza > 0){
 			$riga .= "<option value=\"$id\">$cognome $nome</option>";
