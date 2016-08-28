@@ -608,13 +608,14 @@ function riga_gare_db($con, $id){
 	$result = mysqli_query($con, $query) or die('Errore... gare');
 	while ($results = mysqli_fetch_array($result)) { 
 		$data = $results['data'];
+		$data = date("d/m/Y", strtotime($data));
 		$risultato = $results['risultato'];
 		$risultato = risultato_gare($risultato);
 		$id_gara = $results['id_gara'];
 		$gara = array_gare()[$id_gara];
 		
 		
-		$riga .= "<tr><td>$gara</td><td>$data</td><td>$risultato</td></tr>";
+		$riga .= "<tr><td>$gara </td><td> $data </td><td> $risultato</td></tr>";
 	}
 	return $riga;
 }
