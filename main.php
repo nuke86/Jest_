@@ -141,9 +141,9 @@ include_once('function.php');
 			<td width="50%">Cognome:<br />
 			<input type="text" class="form-control" name="cognome" text-transform: uppercase;" required value="<?php echo $atleta['cognome']; ?>" /></td></tr><tr>
 			<td>Data di Nascita:<br />
-			<input type="text" style="width: 20%;" name="data_nascita" required value="<?php echo $atleta['data_nascita']; ?>" />
+			<input type="text" size="25" name="data_nascita" required value="<?php echo $atleta['data_nascita']; ?>" />
 			Codice Fiscale: 
-			<input type="text" style="width: 30%; text-transform: uppercase;" name="cod_fiscale" value="<?php echo $atleta['cod_fiscale']; ?>" />
+			<input type="text" size="25" text-transform: uppercase;" name="cod_fiscale" value="<?php echo $atleta['cod_fiscale']; ?>" />
 			</td>
 			<td>Indirizzo:<br />
 			<input type="text" class="form-control" name="indirizzo" value="<?php echo $atleta['indirizzo']; ?>" /></td></tr>
