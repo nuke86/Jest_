@@ -615,7 +615,7 @@ function riga_gare_db($con, $id){
 		$gara = array_gare()[$id_gara];
 		
 		
-		$riga .= "<tr><td>$gara </td><td> $data </td><td> $risultato</td></tr>";
+		$riga .= "<tr><td>| $gara |</td><td>| $data |</td><td>| $risultato |</td></tr>";
 	}
 	return $riga;
 }
