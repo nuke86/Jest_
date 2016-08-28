@@ -141,9 +141,9 @@ include_once('function.php');
 			<td width="50%">Cognome:<br />
 			<input type="text" class="form-control" name="cognome" text-transform: uppercase;" required value="<?php echo $atleta['cognome']; ?>" /></td></tr><tr>
 			<td>Data di Nascita:<br />
-			<input type="text" size="25" name="data_nascita" required value="<?php echo $atleta['data_nascita']; ?>" />
+			<input type="text" size="12" name="data_nascita" required value="<?php echo $atleta['data_nascita']; ?>" />
 			Codice Fiscale: 
-			<input type="text" size="25" text-transform: uppercase;" name="cod_fiscale" value="<?php echo $atleta['cod_fiscale']; ?>" />
+			<input type="text" size="16" text-transform: uppercase;" name="cod_fiscale" value="<?php echo $atleta['cod_fiscale']; ?>" />
 			</td>
 			<td>Indirizzo:<br />
 			<input type="text" class="form-control" name="indirizzo" value="<?php echo $atleta['indirizzo']; ?>" /></td></tr>
@@ -168,12 +168,12 @@ include_once('function.php');
 			<td><b>Documenti da archiviare</b> (facoltativo, puoi archiviare anche in un secondo momento):<br />
 			<input type="file" id="file" name="docs[]" multiple="multiple" /><br /><br />
 			</td></tr>
-			<tr><td><b>VISITE MEDICHE:</b><br />
+			<tr><td><h3>VISITE MEDICHE:</h3><br />
 				<table>
 					<tr><td>Data scadenza || </td><td>Tipo</td></tr>
 					<?php echo select_visite_persona($con, $atleta['id']); ?>
 				</table>
-			</td><td><b>QUALIFICAZIONI:</b><br />
+			</td><td><h3>QUALIFICAZIONI:</h3><br />
 				<table>
 					<tr><td align="center">Gara:  </td><td align="center">Data:  </td><td align="center">Risultato:</td></tr>
 					<?php echo riga_gare_db($con, $atleta['id']); ?>
