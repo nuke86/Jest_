@@ -525,7 +525,7 @@ function last_visita($con, $id_persone){
 function array_gare(){
 	$lista_gare = array("Gran Prix Regionale",
 				"Torneo FOX Quartu",
-				"Coppa dell\'amicizia",
+				"Coppa dell'amicizia",
 				"Qualif. Camp. ITA",
 				"Torneo Piccoli Samurai",
 				"Campionato Italiano",
@@ -533,7 +533,7 @@ function array_gare(){
 				"Trofeo Judo Yano",
 				"Torneo Jigoro Kano",
 				"Trofeo Paperino",
-				"Trofeo Salvo d\'Aquisto",
+				"Trofeo Salvo d'Aquisto",
 				"Torneo J.C. Macomer",
 				"Trofeo Sardigna Trophy",
 				"Qualif. Camp. ITA Assoluti",
