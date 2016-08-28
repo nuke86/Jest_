@@ -176,7 +176,7 @@ include_once('function.php');
 			</td><td><b>QUALIFICAZIONI:</b><br />
 				<table>
 					<tr><td>Gara: || </td><td>Data: || </td><td>Risultato:</td></tr>
-					<?php echo riga_gare_db($_GET["id"]); ?>
+					<?php echo riga_gare_db($con, $atleta['id']); ?>
 				</table>
 			</td>
 			

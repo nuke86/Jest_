@@ -603,7 +603,7 @@ function risultato_gare($id){
 }
 
 
-function riga_gare_db($id){
+function riga_gare_db($con, $id){
 	$query = "SELECT * FROM gare WHERE id_atleta = $id ORDER BY data DESC";
 	$result = mysqli_query($con, $query) or die('Errore... gare');
 	while ($results = mysqli_fetch_array($result)) { 
