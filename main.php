@@ -317,7 +317,7 @@ include_once('function.php');
 			<form action="request.php?action=new_qualificazione" method="POST">
 			<input type="hidden" name="id_persone" value="<?php echo $_GET['id']; ?>" />
 			<td>Data della Gara: <input type="text" class="form-control" name="data" value="<?php echo date("Y-m-d"); ?>" id="datepicker" /></td>
-			<td>Tipo di Gara: <?php echo select_gare(); ?>
+			<td>Tipo di Gara: <?php echo array_gare()[0]; ?>
 			</td>
 			<td>Risultato ottenuto: <select class="form-control" name="risultato">
 				<option value="1" selected>Primo posto</option>

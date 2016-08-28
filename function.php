@@ -522,42 +522,38 @@ function last_visita($con, $id_persone){
 	return $riga;
 }
 
-function select_gare(){
-	$gare = '
-	<select class="form-control" name="tipo">
-				<option value="1" selected>Gran Prix Regionale</option>
-				<option value="2">Torneo FOX Quartu</option>
-				<option value="3">Coppa dell\'amicizia</option>
-				<option value="4">Qualif. Camp. ITA</option>
-				<option value="5">Torneo Piccoli Samurai</option>
-				<option value="6">Campionato Italiano</option>
-				<option value="7">Trofeo Catalano</option>
-				<option value="8">Trofeo Judo Yano</option>
-				<option value="9">Torneo Jigoro Kano</option>
-				<option value="10">Trofeo Paperino</option>
-				<option value="11">Trofeo Salvo d\'Aquisto</option>
-				<option value="12">Torneo J.C. Macomer</option>
-				<option value="13">Trofeo Sardigna Trophy</option>
-				<option value="14">Qualif. Camp. ITA Assoluti </option>
-				<option value="15">Trofeo La Maddalena</option>
-				<option value="16">Trofeo Garibaldino</option>
-				<option value="17">Torneo a squadre Shardana</option>
-				<option value="18">Camp. Progetto Farfalla</option>
-				<option value="19">Cagliari CUP</option>
-				<option value="20">Torneo Citt&agrave; di Quartu</option>
-				<option value="21">Qualif. Coppa Italia</option>
-				<option value="22">Torneo C.S. Olbia</option>
-				<option value="23">Torneo Memorial Giovannino Volpi</option>
-				<option value="24">Gran premio Cinture nere</option>
-				<option value="25">Torneo Guido Sieni Judo CUP</option>
-				<option value="26">Torneo J.K. Isili</option>
-				<option value="27">Trofeo Topolino</option>
-				<option value="28">Trofeo Judo in action</option>
-				<option value="29">Campionati Regionali Assoluti</option>
-				<option value="30">Baby Ippon</option>
-				</select>
-	';
-	return $gare;
+function array_gare(){
+	$lista_gare = array("Gran Prix Regionale",
+				"Torneo FOX Quartu",
+				"Coppa dell\'amicizia",
+				"Qualif. Camp. ITA",
+				"Torneo Piccoli Samurai",
+				"Campionato Italiano",
+				"Trofeo Catalano",
+				"Trofeo Judo Yano",
+				"Torneo Jigoro Kano",
+				"Trofeo Paperino",
+				"Trofeo Salvo d\'Aquisto",
+				"Torneo J.C. Macomer",
+				"Trofeo Sardigna Trophy",
+				"Qualif. Camp. ITA Assoluti",
+				"Trofeo La Maddalena",
+				"Trofeo Garibaldino",
+				"Torneo a squadre Shardana",
+				"Camp. Progetto Farfalla",
+				"Cagliari CUP",
+				"Torneo Citt&agrave; di Quartu",
+				"Qualif. Coppa Italia",
+				"Torneo C.S. Olbia",
+				"Torneo Memorial Giovannino Volpi",
+				"Gran premio Cinture nere",
+				"Torneo Guido Sieni Judo CUP",
+				"Torneo J.K. Isili",
+				"Trofeo Topolino",
+				"Trofeo Judo in action",
+				"Campionati Regionali Assoluti",
+				"Baby Ippon");
+	return $lista_gare;
 }
 
 ?>
