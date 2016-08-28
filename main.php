@@ -171,7 +171,7 @@ include_once('function.php');
 			<table><tr><td>Data scadenza || </td><td>Tipo</td></tr>
 			<?php echo select_visite_persona($con, $atleta['id']); ?></table>
 			</td><td><b>QUALIFICAZIONI:</b><br />
-				Nome: <?php echo select_gare(2); ?>
+				Nome: <?php echo array_gare()[2]; ?>
 			</td>
 			
 			<td><b>Archivio esistente</b>

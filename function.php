@@ -564,7 +564,7 @@ function select_gare($id){
 		$riga .= "<option value=\"$i\">$array_gare[$i]</option>";
 		
 		if (($id != "all") AND ($id == $i)){
-			$riga = "<b>$array_gare[$i]</b>";
+			$riga = "<option value=\"$i\" selected>$array_gare[$i]</option>";
 		}
 		
 	}
