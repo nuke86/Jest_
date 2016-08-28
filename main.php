@@ -170,7 +170,11 @@ include_once('function.php');
 			<tr><td><b>VISITE MEDICHE:</b><br />
 			<table><tr><td>Data scadenza || </td><td>Tipo</td></tr>
 			<?php echo select_visite_persona($con, $atleta['id']); ?></table>
-			</td><td><b>Archivio esistente</b>
+			</td><td><b>QUALIFICAZIONI:</b><br />
+				Nome: <?php echo select_gare(2); ?>
+			</td>
+			
+			<td><b>Archivio esistente</b>
 			<div id="container"> </div><div id="selected_file"></div></td></tr>
 			<tr><td>
 			<input type="submit" class="btn btn-default" value="Salva modifiche" /></td></tr>
