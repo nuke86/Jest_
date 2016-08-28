@@ -173,7 +173,7 @@ include_once('function.php');
 			<?php echo select_visite_persona($con, $atleta['id']); ?></table>
 			</td><td><b>QUALIFICAZIONI:</b><br />
 				<table><tr><td>Gara: || </td><td>Data: || </td><td>Risultato:</td></tr>
-				<?php echo array_gare()[2]; ?>
+				<?php echo riga_gare(); ?>
 				</table>
 			</td>
 			

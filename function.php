@@ -589,4 +589,34 @@ function select_gare($id){
 	return $riga;
 }
 
+function risultato_gare($id){
+	if ($id == 1){
+		$risultato = "Primo";
+	} else if ($id == 2){
+		$risultato = "Secondo";
+	} else if ($id == 3){
+		$risultato = "Terzo";
+	} else if ($id == 5){
+		$risultato = "Quinto";
+	}
+	return $risultato;
+}
+
+
+function riga_gare_db($id){
+	$query = "SELECT * FROM gare WHERE id_atleta = $id ORDER BY data DESC";
+	$result = mysqli_query($con, $query) or die('Errore... gare');
+	while ($results = mysqli_fetch_array($result)) { 
+		$data = $results['data'];
+		$risultato = $results['risultato'];
+		$risultato = risultato_gare($risultato);
+		$id_gara = $results['id_gara'];
+		$gara = array_gare()[$id_gara];
+		
+		
+		$riga .= "<tr><td>$gara</td><td>$data</td><td>$risultato</td></tr>";
+	}
+	return $riga;
+}
+
 ?>
