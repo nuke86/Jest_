@@ -54,5 +54,11 @@ if ($_GET['action']=="new_atleta"){
 } elseif ($_GET['action']=="mese_scaduto"){
 	$id = $_POST['mese_scaduto'];
 	header("Location: index.php?sez=atleti&mod=pagamenti&id=$id");
+	
+} elseif ($_GET['action']=="new_qualificazione"){
+	new_qualificazione($con);
+	$id_atleta = $_POST['id_persone'];
+	header("Location: index.php?sez=atleti&mod=edit_atleta&id=$id_atleta");
+	
 }
 ?>

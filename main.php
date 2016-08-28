@@ -130,6 +130,7 @@ include_once('function.php');
 		<a href="index.php?sez=atleti&mod=pagamenti&id=<?php echo $atleta['id']; ?>" class="btn btn-default" title="Stato pagamenti"><i class="glyphicon glyphicon-euro"></i> Pagamenti</a>
 		<a href="index.php?sez=atleti&mod=new_pag&id=<?php echo $atleta['id']; ?>" class="btn btn-default" title="Registra nuovo pagamento"><i class="glyphicon glyphicon-plus"></i> Nuovo pagamento</a>
 		<a href="index.php?sez=atleti&mod=new_visita&id=<?php echo $atleta['id']; ?>" class="btn btn-default" title="Nuova visita medica"><i class="glyphicon glyphicon-plus"></i> Nuova visita medica</a>
+		<a href="index.php?sez=atleti&mod=new_qualificazione&id=<?php echo $atleta['id']; ?>" class="btn btn-default" title="Nuova qualificazione in gara"><i class="glyphicon glyphicon-plus"></i> Nuova qualificazione</a>
 		<a class="btn btn-default" href="index.php?sez=atleti&mod=report_pagamenti" title="Agenda annuale per i pagamenti di tutti gli atleti"><i class="glyphicon glyphicon-calendar"></i> Report pagamenti</a>
 		<br /><br />
 		(*): campi obbligatori.
@@ -171,8 +172,9 @@ include_once('function.php');
 			<table><tr><td>Data scadenza || </td><td>Tipo</td></tr>
 			<?php echo select_visite_persona($con, $atleta['id']); ?></table>
 			</td><td><b>QUALIFICAZIONI:</b><br />
-				Gara: \tData: \tRisultato:
-				<?php echo array_gare()[2]; ?> \toggi \tprimo
+				<table><tr><td>Gara: || </td><td>Data: || </td><td>Risultato:</td></tr>
+				<?php echo array_gare()[2]; ?>
+				</table>
 			</td>
 			
 			<td><b>Archivio esistente</b>

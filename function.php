@@ -194,6 +194,24 @@ function new_visita($con){
 	mysqli_close($con);
 }
 
+function new_qualificazione($con){
+	// escape variables for security
+	$id_persone = mysqli_real_escape_string($con, $_POST['id_persone']);
+	$data = mysqli_real_escape_string($con, $_POST['data']);
+	$risultato = mysqli_real_escape_string($con, $_POST['risultato']);
+	$gara = mysqli_real_escape_string($con, $_POST['gara']);
+	
+	$sql="INSERT INTO gare (id, id_atleta, data, id_gara, risultato)
+		VALUES (NULL, '$id_persone', '$data', '$gara', '$risultato')";
+	
+	if (!mysqli_query($con,$sql)) {
+  		die('Error: ' . mysqli_error($con));
+	}
+	//echo "1 record added";
+
+	mysqli_close($con);
+}
+
 function new_pag_rapido($con, $id_persone, $importo, $data, $causale, $descrizione, $mese){
 	// escape variables for security
 	$id_persone = mysqli_real_escape_string($con, $id_persone);
