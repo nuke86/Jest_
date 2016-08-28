@@ -510,6 +510,32 @@ function atleti_mese_scaduto($con){
 	return $riga;
 }
 
+function atleti_visita_scaduta($con){
+	$anno = date("Y");
+	$mese = date("m");
+	$mese_prox = date("m", strtotime("+1 month", strtotime($mese)));
+	$query = "SELECT * FROM persone ORDER BY cognome ASC";
+	$result = mysqli_query($con, $query) or die('Errore... mese_scaduto');
+	while ($results = mysqli_fetch_array($result)) { 
+		$nome = $results['nome'];
+		$cognome = $results['cognome'];
+		$id = $results['id'];
+		
+		$query1 = "SELECT * FROM visite WHERE data LIKE '$anno-$mese%' OR data LIKE '$anno-$mese_prox%' AND id_persone = $id";
+		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
+		$numrows = mysqli_num_rows($result1);
+		
+		$riga .= "<option value=\"$id\">$cognome $nome</option>";
+		
+			
+	}
+	if ($riga == "") {
+		$riga = "<option>Tutte le visite sono OK</option> <i style=\"color: green;\" class=\"glyphicon glyphicon-ok\"></i>";
+	}
+	return $riga;
+}
+
+
 function select_visite_persona($con, $id_persone){
 	$query = "SELECT * FROM visite WHERE id_persone = $id_persone ORDER BY data DESC";
 	$result = mysqli_query($con, $query) or die('Errore... visite');

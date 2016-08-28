@@ -29,6 +29,7 @@ include_once('function.php');
 		</form>
 		<br />
 		Atleti con visita medica in scadenza: <br />
+		<select name="visita_scaduta"><?php echo atleti_visita_scaduta($con); ?></select>
 		</td></tr></table>
 	</div>
 </div>
@@ -180,7 +181,7 @@ include_once('function.php');
 				</table>
 			</td>
 			
-			<td><b>Archivio esistente</b>
+			<td><h3>Archivio esistente</h3>
 			<div id="container"> </div><div id="selected_file"></div></td></tr>
 			<tr><td>
 			<input type="submit" class="btn btn-default" value="Salva modifiche" /></td></tr>
