@@ -520,7 +520,7 @@ function atleti_visita_scaduta($con){
 		$cognome = $results['cognome'];
 		$id = $results['id'];
 		
-		$query1 = "SELECT * FROM visite WHERE id_persone = $id ORDER BY date DESC LIMIT 0,1";
+		$query1 = "SELECT * FROM visite WHERE id_persone = $id ORDER BY date DESC LIMIT 1";
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
 		while ($results = mysqli_fetch_array($result)) { 
 			$data = $results['data'];
