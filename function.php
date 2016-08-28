@@ -524,9 +524,9 @@ function atleti_visita_scaduta($con){
 		$query1 = "SELECT * FROM visite WHERE data LIKE '$anno-$mese%' OR data LIKE '$anno-$mese_prox%' AND id_persone = $id";
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
 		$numrows = mysqli_num_rows($result1);
-		
-		$riga .= "<option value=\"$id\">$cognome $nome</option>";
-		
+		if ($numrows != 0){
+			$riga .= "<option value=\"$id\">$cognome $nome</option>";
+		}
 			
 	}
 	if ($riga == "") {
