@@ -510,9 +510,25 @@ function atleti_mese_scaduto($con){
 	return $riga;
 }
 
+function delta_tempo ($data_iniziale,$data_finale,$unita) {
+ 
+	 $data1 = strtotime($data_iniziale);
+	 $data2 = strtotime($data_finale);
+	 
+		switch($unita) {
+			case "m": $unita = 1/60; break; 	//MINUTI
+			case "h": $unita = 1; break;		//ORE
+			case "g": $unita = 24; break;		//GIORNI
+			case "a": $unita = 8760; break;         //ANNI
+		}
+	 
+	$differenza = (($data2-$data1)/3600)/$unita;
+	return $differenza;
+}
+
 function atleti_visita_scaduta($con){
-	$oggi = date("m-Y");
-	$mese_prox = date("m-Y", strtotime("+1 month", strtotime($oggi)));
+	$oggi = date("d-m-Y");
+	$mese_prox = date("d-m-Y", strtotime("+1 month", strtotime($oggi)));
 	$query = "SELECT * FROM persone ORDER BY cognome ASC";
 	$result = mysqli_query($con, $query) or die('Errore... mese_scaduto');
 	while ($results = mysqli_fetch_array($result)) { 
@@ -524,9 +540,10 @@ function atleti_visita_scaduta($con){
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
 		while ($results = mysqli_fetch_array($result)) { 
 			$data = $results['data'];
-			$scadenza = date("m-Y", strtotime("+1 year", strtotime($data)));
+			$scadenza = date("d-m-Y", strtotime("+1 year", strtotime($data)));
 		}	
-		if (($scadenza == $oggi) OR ($scadenza == $mese_prox) OR ($scadenza < $oggi)){
+		$differenza = delta_tempo("$scadenza", "$oggi", "g");
+		if (differenza < 0){
 			$riga .= "<option value=\"$id\">$cognome $nome</option>";
 		}
 	}
