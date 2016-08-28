@@ -527,8 +527,8 @@ function delta_tempo ($data_iniziale,$data_finale,$unita) {
 }
 
 function atleti_visita_scaduta($con){
-	$oggi = date("d-m-Y");
-	$mese_prox = date("d-m-Y", strtotime("+1 month", strtotime($oggi)));
+	$oggi = date("Y-m-d");
+	$mese_prox = date("Y-m-d", strtotime("+1 month", strtotime($oggi)));
 	$query = "SELECT * FROM persone ORDER BY cognome ASC";
 	$result = mysqli_query($con, $query) or die('Errore... mese_scaduto');
 	while ($results = mysqli_fetch_array($result)) { 
@@ -540,11 +540,11 @@ function atleti_visita_scaduta($con){
 		$result1 = mysqli_query($con, $query1) or die('Errore... visite mese scaduto');
 		while ($results = mysqli_fetch_array($result)) { 
 			$data = $results['data'];
-			$scadenza = date("d-m-Y", strtotime("+1 year", strtotime($data)));
+			$scadenza = date("Y-m-d", strtotime("+1 year", strtotime($data)));
 		}	
-		$differenza = delta_tempo("$oggi", "$scadenza", "g");
+		$differenza = delta_tempo("$scadenza", "$oggi", "g");
 		echo "$differenza <br />";
-		if (differenza < 0){
+		if (differenza > 0){
 			$riga .= "<option value=\"$id\">$cognome $nome</option>";
 		}
 	}
