@@ -399,6 +399,7 @@ function report_pagamenti($con){
 			  <ul class=\"dropdown-menu\">
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01&importo=25\">25 EURO</a></li>
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01&importo=65\">65 EURO</a></li>
 			  </ul>
 			</div>
 			";
@@ -406,57 +407,156 @@ function report_pagamenti($con){
 			$link01 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=01\">$gennaio</a>";
 		}
 		if ($febbraio_r == 0) {
-			$link02 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=02\">$febbraio</a>";
+			$link02 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $febbraio <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=02&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=02&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=02&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link02 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=02\">$febbraio</a>";
 		}
 		if ($marzo_r == 0) {
-			$link03 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=03\">$marzo</a>";
+			$link03 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $marzo <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=03&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=03&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=03&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link03 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=03\">$marzo</a>";
 		}
 		if ($aprile_r == 0) {
-			$link04 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=04\">$aprile</a>";
+			$link04 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $aprile <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=04&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=04&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=04&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link04 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=04\">$aprile</a>";
 		}
 		if ($maggio_r == 0) {
-			$link05 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=05\">$maggio</a>";
+			$link05 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $maggio <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=05&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=05&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=05&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link05 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=05\">$maggio</a>";
 		}
 		if ($giugno_r == 0) {
-			$link06 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=06\">$giugno</a>";
+			$link06 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $giugno <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=06&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=06&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=06&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link06 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=06\">$giugno</a>";
 		}
 		if ($luglio_r == 0) {
-			$link07 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=07\">$luglio</a>";
+			$link07 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $luglio <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=07&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=07&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=07&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link07 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=07\">$luglio</a>";
 		}
 		if ($agosto_r == 0) {
-			$link08 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=08\">$agosto</a>";
+			$link08 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $agosto <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=08&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=08&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=08&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link08 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=08\">$agosto</a>";
 		}
 		if ($settembre_r == 0) {
-			$link09 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09\">$settembre</a>";
+			$link09 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $settembre <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link09 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=09\">$settembre</a>";
 		}
 		if ($ottobre_r == 0) {
-			$link10 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=10\">$ottobre</a>";
+			$link10 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $ottobre <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=10&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=10&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=10&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link10 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=10\">$ottobre</a>";
 		}
 		if ($novembre_r == 0) {
-			$link11 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=11\">$novembre</a>";
+			$link11 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $novembre <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=11&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=11&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=11&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link11 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=11\">$novembre</a>";
 		}
 		if ($dicembre_r == 0) {
-			$link12 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=12\">$dicembre</a>";
+			$link12 = "<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $dicembre <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=12&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=12&importo=35\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=12&importo=65\">65 EURO</a></li>
+			  </ul>
+			</div>";
 		} else {
 			$link12 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=12\">$dicembre</a>";
 		}
