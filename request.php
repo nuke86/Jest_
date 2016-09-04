@@ -34,7 +34,7 @@ if ($_GET['action']=="new_atleta"){
 	
 } elseif ($_GET['action']=="new_pag_rapido"){
 	$id_persone = $_GET['id_persone'];
-	$importo = $costo_mese_config;
+	$importo = $_GET['importo'];
 	$data = date("Y-m-d");
 	$causale = "men";
 	$descrizione = "Pagamento per mensilit&agrave; inserimento rapido";

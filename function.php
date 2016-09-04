@@ -397,8 +397,8 @@ function report_pagamenti($con){
 			    $gennaio <span class=\"caret\"></span>
 			  </button>
 			  <ul class=\"dropdown-menu\">
-			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01\">25 EURO</a></li>
-			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01\">35 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01&importo=35\">35 EURO</a></li>
 			  </ul>
 			</div>
 			";
