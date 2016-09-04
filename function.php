@@ -243,10 +243,10 @@ function pagamento_mese($con, $mese, $id_persone, $causale){
 	$numrows = mysqli_num_rows($result);
 	
 	// se il database è vuoto lo stampo a video
-	if ($numrows == 0){
-		$segno = "<i style=\"color: red;\" class=\"glyphicon glyphicon-remove\"></i>";
-	} else {
+	if ($numrows != 0){
 		$segno = "<i style=\"color: green;\" class=\"glyphicon glyphicon-ok\"></i>";
+	  } else {
+	  	$segno = "Paga";
 	  }
 	return $segno;
 }
@@ -391,7 +391,17 @@ function report_pagamenti($con){
 		$novembre_r = pagamento_mese_rapido($con, "11", $id, "men");
 		$dicembre_r = pagamento_mese_rapido($con, "12", $id, "men");
 		if ($gennaio_r == 0) {
-			$link01 = "<a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01\">$gennaio</a>";
+			$link01 = "
+			<div class=\"btn-group\">
+			  <button type=\"button\" class=\"btn btn-default dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
+			    $gennaio <span class=\"caret\"></span>
+			  </button>
+			  <ul class=\"dropdown-menu\">
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=01\">35 EURO</a></li>
+			  </ul>
+			</div>
+			";
 		} else {
 			$link01 = "<a href=\"request.php?action=remove_pag_rapido&id_persone=$id&mese=01\">$gennaio</a>";
 		}
