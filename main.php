@@ -259,7 +259,7 @@ include_once('function.php');
 		<!-- Strumenti principali -->
 		<a class="btn btn-default" href="index.php?sez=atleti"><i class="glyphicon glyphicon-list"></i> Elenco atleti</a>
 		<br /><br /><h3 align="center">ANNO <b><?php echo date("Y"); ?></b></h3><br />
-		Cliccando sulla X rossa puoi rapidamente inserire il pagamento desiderato, al contrario se clicchi sul VISTO verde rimuoverai il pagamento per tale atleta. <br />
+		Cliccando su "Paga" puoi rapidamente inserire il pagamento desiderato scegliendo l'importo, al contrario se clicchi sul VISTO verde rimuoverai il pagamento per tale atleta. <br />
 		<table class="table" style="text-align: center;">
 		<tr><td>Nome atleta</td>
 		<td><b>Gennaio</b></td>
