@@ -606,7 +606,7 @@ function atleti_mese_scaduto($con){
 		$cognome = $results['cognome'];
 		$id = $results['id'];
 		
-		$query1 = "SELECT * FROM abbonamenti WHERE causale = 'men' AND mese = '$mese' AND data LIKE '$anno%' AND id_persone = $id";
+		$query1 = "SELECT * FROM abbonamenti WHERE (causale = 'men' OR causale = 'iam') AND mese = '$mese' AND data LIKE '$anno%' AND id_persone = $id";
 		$result1 = mysqli_query($con, $query1) or die('Errore... pagamenti mese scaduto');
 		$numrows = mysqli_num_rows($result1);
 		if ($numrows == 0){
