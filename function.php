@@ -236,7 +236,7 @@ function new_pag_rapido($con, $id_persone, $importo, $data, $causale, $descrizio
 
 function pagamento_mese($con, $mese, $id_persone, $causale){
 	$anno = date("Y");
-	$query = "SELECT * FROM abbonamenti WHERE id_persone = $id_persone AND causale = '$causale' AND causale = 'iam' AND mese = '$mese' AND data LIKE '$anno%'";
+	$query = "SELECT * FROM abbonamenti WHERE id_persone = $id_persone AND causale = '$causale' OR causale = 'iam' AND mese = '$mese' AND data LIKE '$anno%'";
 	$result = mysqli_query($con, $query) or die('Errore... pagamenti');
 	
 	// conto il numero di occorrenze trovate nel db
@@ -253,7 +253,7 @@ function pagamento_mese($con, $mese, $id_persone, $causale){
 
 function pagamento_mese_rapido($con, $mese, $id_persone, $causale){
 	$anno = date("Y");
-	$query = "SELECT * FROM abbonamenti WHERE id_persone = $id_persone AND causale = '$causale' AND mese = '$mese' AND causale = 'iam' AND data LIKE '$anno%'";
+	$query = "SELECT * FROM abbonamenti WHERE id_persone = $id_persone AND causale = '$causale' AND mese = '$mese' OR causale = 'iam' AND data LIKE '$anno%'";
 	$result = mysqli_query($con, $query) or die('Errore... pagamenti');
 	
 	// conto il numero di occorrenze trovate nel db
