@@ -511,8 +511,10 @@ function report_pagamenti($con){
 			  </button>
 			  <ul class=\"dropdown-menu\">
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=25\">25 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=30\">30 EURO</a></li>
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=35\">35 EURO</a></li>
-			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=65\">65 EURO</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=65\">65 EURO (iscr+men)</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=70\">70 EURO (iscr+men)</a></li>
 			  </ul>
 			</div>";
 		} else {
