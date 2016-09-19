@@ -154,6 +154,12 @@ function elimina_persona($con,$id){
 	return $result;
 }
 
+function remove_pag($con,$id){
+	$query = "DELETE FROM abbonamenti WHERE id = $id";
+	$result = mysqli_query($con, $query) or die('Errore...');
+	return $result;
+}
+
 function new_pag($con){
 	// escape variables for security
 	$id_persone = mysqli_real_escape_string($con, $_POST['id_persone']);
@@ -331,7 +337,7 @@ function list_pagamenti($con, $id_persone){
 		// stampo a video il risultato
 	   
 			$select_finale .= "
-			<tr><td>".$id."</td><td>".$data."</td><td>".$mese."</td><td>".$importo."</td><td>".$causale."</td><td>".$descrizione."</td></tr>
+			<tr><td>".$id."</td><td>".$data."</td><td>".$mese."</td><td>".$importo."</td><td>".$causale."</td><td>".$descrizione."</td><td><a href=\"request.php?action=remove_pag&id=$id&persone=$id_persone\"><i style=\"color: red;\" class=\"glyphicon glyphicon-remove\"></i></a></td></tr>
 			";
 		
 	  }
@@ -513,8 +519,8 @@ function report_pagamenti($con){
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=25\">25 EURO</a></li>
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=30\">30 EURO</a></li>
 			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=35\">35 EURO</a></li>
-			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=65\">65 EURO (iscr+men)</a></li>
-			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=70\">70 EURO (iscr+men)</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=65&causale=iam\">65 EURO (iscr+men)</a></li>
+			    <li><a href=\"request.php?action=new_pag_rapido&id_persone=$id&mese=09&importo=70&causale=iam\">70 EURO (iscr+men)</a></li>
 			  </ul>
 			</div>";
 		} else {

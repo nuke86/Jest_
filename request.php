@@ -37,10 +37,18 @@ if ($_GET['action']=="new_atleta"){
 	$importo = $_GET['importo'];
 	$data = date("Y-m-d");
 	$causale = "men";
+	if ($_GET['causale'] != ""){
+		$causale = $_GET['causale'];
+	}
 	$descrizione = "Pagamento per mensilit&agrave; inserimento rapido";
 	$mese = $_GET['mese'];
 	new_pag_rapido($con, $id_persone, $importo, $data, $causale, $descrizione, $mese);
 	header("Location: index.php?sez=atleti&mod=report_pagamenti");
+
+} elseif ($_GET['action']=="remove_pag"){
+	remove_pag($con, $_GET['id']);
+	$id_atleta = $_GET['id_persone'];
+	header("Location: index.php?sez=atleti&mod=pagamenti&id=$id_atleta");
 	
 } elseif ($_GET['action']=="remove_pag_rapido"){
 	remove_pag_rapido($con, $_GET['id_persone'], $_GET['mese']);
