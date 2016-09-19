@@ -47,7 +47,7 @@ if ($_GET['action']=="new_atleta"){
 
 } elseif ($_GET['action']=="remove_pag"){
 	remove_pag($con, $_GET['id']);
-	$id_atleta = $_GET['id_persone'];
+	$id_atleta = $_GET['persone'];
 	header("Location: index.php?sez=atleti&mod=pagamenti&id=$id_atleta");
 	
 } elseif ($_GET['action']=="remove_pag_rapido"){
